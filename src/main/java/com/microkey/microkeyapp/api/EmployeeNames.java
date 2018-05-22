@@ -1,4 +1,4 @@
-package com.microkey.employeeapp.api;
+package com.microkey.microkeyapp.api;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,15 +20,10 @@ public class EmployeeNames {
 	
     @Value("${employee.name}")
     private String employeeName;
-
-    @Value("${manager.name}")
-    private String managerName;
     
     @GetMapping("/returnname")
     public List<String> employeeList(){
     	nameOfEmployees.add(employeeName);
-    	nameOfEmployees.add(managerName);
-    	
         return nameOfEmployees;
     }
 }

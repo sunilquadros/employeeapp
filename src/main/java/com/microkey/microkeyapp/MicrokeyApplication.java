@@ -1,4 +1,4 @@
-package com.microkey.employeeapp;
+package com.microkey.microkeyapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
