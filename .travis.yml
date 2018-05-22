@@ -1,15 +1,25 @@
 language: java
-sudo required
+sudo: required
 jdk: oraclejdk8
 
-script:
-- ./mvnw clean install -B
+services:
+- docker
 
+env:
+  global:
+  - COMMIT=${TRAVIS_COMMIT::7}
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    
+script:
+  - ./mvnw clean install -B
 
 after_success:
-- docker login -u $DOCKER_USER -p $DOCKER_PASS
-- export TAG=`if [ "$TRAVIS_BRANCH" == "develop" ]; then echo "latest"; else echo $TRAVIS_BRANCH&amp;amp;amp;amp;amp;amp;amp;lt;span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"&amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;lt;/span&amp;amp;amp;amp;amp;amp;amp;gt;; fi`
-- export IMAGE_NAME=coolindguy/employeeapp
-- docker build -t $IMAGE_NAME:$COMMIT .
-- docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
-- docker push $IMAGE_NAME
+  - docker login -u "coolindguy" -p "anne12"
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "develop" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
+  - export IMAGE_NAME=coolindguy/babysteps
+  - docker build -t $IMAGE_NAME:$COMMIT .
+  - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
+  - docker push $IMAGE_NAME
