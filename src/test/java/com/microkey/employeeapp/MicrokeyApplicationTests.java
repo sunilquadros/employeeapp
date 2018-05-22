@@ -1,4 +1,4 @@
-package com.microkey.microkeyapp;
+package com.microkey.employeeapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
