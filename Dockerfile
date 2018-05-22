@@ -1,5 +1,6 @@
 FROM frolvlad/alpine-oraclejdk8:slim
 VOLUME /tmp
+
 ADD ./target/microkeyapp-0.0.1-SNAPSHOT.jar  Microkey.jar
 RUN sh -c 'touch /Microkey.jar'
 ENV JAVA_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n"
