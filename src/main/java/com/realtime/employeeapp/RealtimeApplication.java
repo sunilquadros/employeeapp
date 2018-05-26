@@ -1,12 +1,12 @@
-package com.microkey.employeeapp;
+package com.realtime.employeeapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicrokeyApplication {
+public class RealtimeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicrokeyApplication.class, args);
+		SpringApplication.run(RealtimeApplication.class, args);
 	}
 }
