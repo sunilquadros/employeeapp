@@ -23,3 +23,4 @@ after_success:
   - docker build -t $IMAGE_NAME:$COMMIT .
   - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
   - docker push $IMAGE_NAME
+

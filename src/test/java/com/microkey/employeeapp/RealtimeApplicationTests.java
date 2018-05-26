@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MicrokeyApplicationTests {
+public class RealtimeApplicationTests {
 
 	@Test
 	public void contextLoads() {
