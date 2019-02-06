@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-oraclejdk8:slim
+FROM carsharing/alpine-oraclejdk8-bash
 VOLUME /tmp
 
 ADD ./target/employeeapp-0.0.1-SNAPSHOT.jar  realtime.jar
